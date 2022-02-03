@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,ReactFragment} from "react";
 import {GetSportE} from '../../Services/SportE-service';
 export const MyProvider = React.createContext();
 export const SportEContext = ({children})=>{
@@ -9,6 +9,6 @@ useEffect(()=>{
 return(
     <MyProvider.Provider value={{sport,setSport}}>
         {children}
-    </MyProvider.Provider>
+    </MyProvider.Provider>         
 )    
 }
