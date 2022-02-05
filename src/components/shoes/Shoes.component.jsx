@@ -1,13 +1,11 @@
-import React,{useContext} from "react";
-import{ MyProvider }from "./ContextProvider.component";
+import React from "react";
+import ShoesCards from "./Shoes-Cards.component";
+import{ContextProvider }from "./ContextProvider.component";
 const Shoes =()=>{
-const ConsumerContext = useContext(MyProvider)
 return(
-<div>
-    {
-        ConsumerContext.arrayS.map((item)=> <li>{item.Company}</li> )
-    }            
-</div>
+<ContextProvider>
+   <ShoesCards/>
+</ContextProvider>
 )
 }
 export default Shoes;
