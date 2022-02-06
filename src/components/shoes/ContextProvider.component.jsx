@@ -3,11 +3,17 @@ import {GetData}from '../../Services/Shoes-service'
 export const MyProvider = React.createContext();
 export const ContextProvider = ({children})=>{ 
 const[arrayS,setArrayS] = useState([])
+const[isLoading,setIsLoading] = useState(false)
+
 useEffect(()=>{
-GetData().then(res =>{ setArrayS(res.Shoes)})
+setIsLoading(true)
+GetData()
+.then(res =>{ setArrayS(res.Shoes)})
+.catch((rej)=>{console.error(rej);})
+.finally(()=>{setIsLoading(false)})
 },[])
 return(
-    <MyProvider.Provider value={{arrayS,setArrayS}}>
+    <MyProvider.Provider value={{arrayS,setArrayS,isLoading}}>
         {children}
     </MyProvider.Provider>
 )

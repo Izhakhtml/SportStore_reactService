@@ -1,15 +1,12 @@
 import React from "react";
-import {MyProvider} from '../Shirts/ShirtContext.component'
+import {ShirtContext} from './ShirtContext.component'
+import ShirtsCards from "./Shirts-Cards.component";
 const Shirt=()=>{
-const ConsumerContext = React.useContext(MyProvider) 
 return(
-    <div>
-         {
-            ConsumerContext.shirt.map((item)=>
-                <li>{item.Company}</li>
-            )
-         }
-    </div>
+<ShirtContext>
+    <h1>SHIRTS</h1>
+    <ShirtsCards/>
+</ShirtContext>
 )    
 }
 export default Shirt;

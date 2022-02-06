@@ -4,6 +4,7 @@ import{ContextProvider }from "./ContextProvider.component";
 const Shoes =()=>{
 return(
 <ContextProvider>
+   <h1>SHOES</h1>
    <ShoesCards/>
 </ContextProvider>
 )

@@ -1,13 +1,12 @@
 import React from "react";
-import{MyProvider}from './SportEContext.component';
+import{SportEContext}from './SportEContext.component';
+import SportSECards from "./SportEs-Cards.component";
 const SportE=()=>{
-const {sport,setSport} = React.useContext(MyProvider);
 return(
-<div>
-    {
-        sport.map((item)=><li>{item.SportType}</li>)
-    }
-</div>    
+<SportEContext>
+<h1>SPOER EQUIPMENT</h1>    
+<SportSECards/>
+</SportEContext> 
 )    
 }
 export default SportE;
