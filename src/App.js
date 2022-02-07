@@ -1,17 +1,12 @@
-import { ContextProvider } from "./components/shoes/ContextProvider.component";
-import { PantsContext } from "./components/pants/PantsContext.component";
-import {ShirtContext} from './components/Shirts/ShirtContext.component'
-import {SportEContext} from './components/sport_equipment/SportEContext.component'
-import Shoes from "./components/shoes/Shoes.component";
-import Pants from "./components/pants/Pants.component";
-import Shirt from "./components/Shirts/Shirt.component";
-import SportE from "./components/sport_equipment/SportE.component";
+import './App.css'
+import AppRouter from "./Routing/AppRouter.component";
+import Reducer from './components/home/Reducer.component';
+import Header from './components/parts/Header.component';
 function App() {
 return(
-    <SportEContext>
-        <SportE/>
-    </SportEContext>
+<div className="App">
+<AppRouter/>
+</div>
   );
 }
-
 export default App;
